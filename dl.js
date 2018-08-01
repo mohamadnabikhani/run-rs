@@ -10,7 +10,7 @@ module.exports = function dl(version = '3.6.5') {
   const dirname = `mongodb-${getOS()}-x86_64-${version}`;
 
   console.log(`Downloading MongoDB ${version}`);
-  execSync(`curl -OL http://downloads.mongodb.org/${getOS()}/${filename}`);
+  execSync(`wget -OL http://downloads.mongodb.org/${getOS()}/${filename}`);
   execSync(`tar -zxvf ${filename}`);
   execSync(`mv ./${dirname}/bin ${__dirname}/${version}`);
   execSync(`rm -rf ./${dirname}`);
